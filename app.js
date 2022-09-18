@@ -1,1 +1,2 @@
-console.log("script is working from a different file")
+var uswername=prompt("Give me your username")
+alert("this website works" + username);
