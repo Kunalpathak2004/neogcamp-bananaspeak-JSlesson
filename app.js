@@ -9,6 +9,8 @@ var outputDiv = document.querySelector("#output");
 function clickHandler(){
     outputDiv.innerText="aggjhdamhnsafhg " + txtInput.value;
 };
+// when you have to check the value or assign it you use 
+// .value but when we have to acces inner text we use     .innerText
 
 
 
