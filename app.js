@@ -3,8 +3,8 @@ var btnTranslate = document.querySelector("#btn-translate");
 // The Document querySelector() returns the first element within in the document that matches the specified selectors. For eg: here it returned the selector with id btn-translate which was the id given for button
 var txtInput = document.querySelector("#txt-input");
 var outputDiv = document.querySelector("#output");
-var serverUrl = "https://lessonfourapi.tanaypratap.repl.co/translate/yoda.json";
-
+// var serverUrl = "https://lessonfourapi.tanaypratap.repl.co/translate/yoda.json";
+var serverUrl ="https://api.funtranslations.com/translate/minion.json";
 
 function getTrabslateUrl(text) {
     return serverUrl + "?" + "text= " + text
@@ -25,7 +25,10 @@ function clickHandler() {
     //   processing output
     fetch(getTrabslateUrl(inputText))
         .then(res => res.json())
-        .then(json => console.log(json.contents.translated))
+        .then(json => {
+            var translatedText = json.contents.translated;
+            outputDiv.innerText = translatedText;
+        })
         .catch(errorHandler)
 };
 
